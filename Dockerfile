@@ -14,10 +14,9 @@ unzip LiteLoader-${LLVER}.zip -d ${BDSDIR} && \
 rm /home/bds/bedrock-server-${BDSVER}.zip && \
 rm /home/bds/LiteLoader-${LLVER}.zip
 WORKDIR ${BDSDIR}
-COPY vcruntime140_1.zip ${BDSDIR}
-RUN unzip vcruntime140_1.zip "vcruntime140_1.dll" && \
-rm vcruntime140_1.zip && \
-wine SymDB2.exe && \
+COPY vcruntime140_1.dll ${BDSDIR}
+RUN wine SymDB2.exe && \
+rm plugins/LiteLoader/CrashLogger_Daemon.exe && \
 rm /home/bds/.wine -r
 
 ENV WINEDEBUG -all
