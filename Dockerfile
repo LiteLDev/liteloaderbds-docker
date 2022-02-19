@@ -20,4 +20,5 @@ rm plugins/LiteLoader/CrashLogger_Daemon.exe && \
 rm /home/bds/.wine -r
 
 ENV WINEDEBUG -all
-CMD [ "wine", "/home/bds/bds/bedrock_server_mod.exe" ]
+ENTRYPOINT [ "/bin/bash" ]
+CMD [ "-c", "wine /home/bds/bds/bedrock_server_mod.exe | cat" ]
