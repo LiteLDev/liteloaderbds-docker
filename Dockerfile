@@ -2,8 +2,8 @@ FROM shrbox/winehq
 
 VOLUME [ "/home/bds/bds" ]
 ENV BDSDIR /home/bds/bds/
-ENV BDSVER 1.18.12.01
-ENV LLVER 2.1.8
+ENV BDSVER 1.18.30.04
+ENV LLVER 2.2.0
 RUN useradd -m bds -d /home/bds -s /bin/bash && apt install wget unzip -y
 USER bds
 WORKDIR /home/bds/
@@ -15,7 +15,7 @@ rm /home/bds/bedrock-server-${BDSVER}.zip && \
 rm /home/bds/LiteLoader-${LLVER}.zip
 WORKDIR ${BDSDIR}
 COPY vcruntime140_1.dll ${BDSDIR}
-RUN wine SymDB2.exe && \
+RUN wine LLPeEditor.exe && \
 rm plugins/LiteLoader/CrashLogger_Daemon.exe && \
 rm /home/bds/.wine -r
 
