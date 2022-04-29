@@ -3,7 +3,7 @@ FROM shrbox/winehq
 VOLUME [ "/home/bds/bds" ]
 ENV BDSDIR /home/bds/bds/
 ENV BDSVER 1.18.31.04
-ENV LLVER 2.2.0
+ENV LLVER 2.2.1
 RUN useradd -m bds -d /home/bds -s /bin/bash && apt install wget unzip -y
 USER bds
 WORKDIR /home/bds/
@@ -22,5 +22,3 @@ rm /home/bds/.wine -r
 ENV WINEDEBUG -all
 ENTRYPOINT [ "/bin/bash" ]
 CMD [ "-c", "wine /home/bds/bds/bedrock_server_mod.exe | cat" ]
-
- 
