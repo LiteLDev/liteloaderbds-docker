@@ -17,6 +17,7 @@ WORKDIR ${BDSDIR}
 COPY vcruntime140_1.dll ${BDSDIR}
 RUN wine LLPeEditor.exe && \
 rm plugins/LiteLoader/CrashLogger_Daemon.exe && \
+rm bedrock_server.exe && \
 rm /home/bds/.wine -r
 
 ENV WINEDEBUG -all
