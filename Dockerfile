@@ -3,7 +3,7 @@ FROM shrbox/winehq
 VOLUME [ "/home/bds/bds" ]
 ENV BDSDIR /home/bds/bds/
 ENV BDSVER 1.18.33.02
-ENV LLVER 2.2.5
+ENV LLVER 2.2.8
 RUN useradd -m bds -d /home/bds -s /bin/bash && apt install wget unzip -y
 USER bds
 WORKDIR /home/bds/
